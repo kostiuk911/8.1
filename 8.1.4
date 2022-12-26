@@ -1,1 +1,24 @@
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+int main() {
+    string str;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    string replace_chars = "aabbcc";
+    string replace_string = "***";
+
+    size_t pos = str.find_first_of(replace_chars);
+    while (pos != string::npos) {
+        str.replace(pos, 2, replace_string);
+        pos = str.find_first_of(replace_chars, pos + replace_string.size());
+    }
+
+    cout << "Result: " << str << endl;
+
+    return 0;
+}
