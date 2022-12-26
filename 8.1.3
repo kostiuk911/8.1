@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() {
+	char str[100]; 
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+
+    int strLen = strlen(str);
+    for (int i = 0; i < strLen - 1; i++) {
+        if (str[i] == 'a' && str[i + 1] == 'a') {
+            str[i] = '***';
+            str[i + 1] = '***';
+        }
+        if (str[i] == 'b' && str[i + 1] == 'b') {
+            str[i] = '***';
+            str[i + 1] = '***';
+        }
+        if (str[i] == 'c' && str[i + 1] == 'c') {
+            str[i] = '***';
+            str[i + 1] = '***';
+        }
+    }
+
+    cout << "Result: " << str << endl;
+
+    return 0;
+}
