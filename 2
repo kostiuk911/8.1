@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string replace_substrings(string str) {
+    if (str.find("aa") == string::npos && str.find("bb") == string::npos && str.find("cc") == string::npos) {
+
+        return str;
+    }
+    else {
+        if (str.find("aa") != string::npos) {
+            str.replace(str.find("aa"), 2, "***");
+        }
+        if (str.find("bb") != string::npos) {
+            str.replace(str.find("bb"), 2, "***");
+        }
+        if (str.find("cc") != string::npos) {
+            str.replace(str.find("cc"), 2, "***");
+        }
+
+        return replace_substrings(str);
+    }
+}
+
+int main() {
+    string str;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    cout << "Result: " << replace_substrings(str) << endl;
+
+    return 0;
+}
